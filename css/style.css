@@ -1968,3 +1968,127 @@ ul{
     }
 
 }
+
+
+/*==============================
+        FLOATING CTA
+==============================*/
+
+.floating-cta{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    z-index:999;
+
+}
+
+.floating-cta a{
+
+    width:100px;
+
+    height:40px;
+
+    border-radius:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+}
+
+.call-btn{
+
+    background:#B68D40;
+
+}
+
+.whatsapp-btn{
+
+    background:#25D366;
+
+}
+
+.floating-cta a:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.floating-cta i{
+
+    font-size:18px;
+
+}
+
+
+@media(max-width:768px){
+
+    .floating-cta{
+
+        left:0;
+
+        right:0;
+
+        bottom:0;
+
+        width:100%;
+
+        flex-direction:row;
+
+        gap:0;
+
+    }
+
+    .floating-cta a{
+
+        width:50%;
+
+        height:60px;
+
+        border-radius:0;
+
+        box-shadow:none;
+
+        justify-content:center;
+
+    }
+
+    .call-btn{
+
+        border-top-right-radius:12px;
+
+    }
+
+    .whatsapp-btn{
+
+        border-top-left-radius:12px;
+
+    }
+
+}
