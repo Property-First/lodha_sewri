@@ -14,6 +14,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
+
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/responsive.css">
@@ -851,12 +853,15 @@
         <label for="name">Full Name</label>
     </div>
 
-    <div class="input-box">
-        <i class="fa-solid fa-phone"></i>
-        <input type="tel" id="phone" name="phone" required>
-        <label for="phone">Phone Number</label>
-    </div>
-
+     <div class="form-group">
+    <input
+        id="phone"
+        type="tel"
+        name="phone"
+        placeholder="Enter Mobile Number"
+        required
+    >
+</div> 
     
 
     <div class="terms-box">
@@ -1055,16 +1060,15 @@
 
     </div>
 
-    <div class="form-group">
-
-        <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            required
-        >
-
-    </div>
+     <div class="form-group">
+    <input
+        id="phone"
+        type="tel"
+        name="phone"
+        placeholder="Enter Mobile Number"
+        required
+    >
+</div>
 
     <div class="terms-box">
 
@@ -1119,6 +1123,42 @@
 </a>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+<script>
+    const input = document.querySelector("#phone");
+
+window.intlTelInput(input, {
+    initialCountry: "in",
+    preferredCountries: ["in", "ae", "us", "gb", "sg"],
+    separateDialCode: true,
+    nationalMode: true,
+    autoPlaceholder: "polite",
+    strictMode: true,
+});
+</script>
+
+<style>
+    .iti {
+    width: 100%;
+}
+
+.iti input {
+    width: 100%;
+    /* height: 58px; */
+    border-radius: 12px;
+    padding-left: 90px !important;
+    font-size: 15px;
+    /* border: 1px solid #ddd; */
+}
+
+.iti--allow-dropdown input {
+    padding-left: 95px !important;
+}
+
+.iti__selected-country {
+    padding-left: 14px;
+}
+</style>
     <script src="./js/app.js" defer></script>
 
 </body>

@@ -64,36 +64,43 @@ tabs.forEach(tab => {
 
 const modal = document.getElementById("enquiryModal");
 
+// Open from buttons
 document.querySelectorAll(".open-modal").forEach(btn => {
-
     btn.addEventListener("click", e => {
-
         e.preventDefault();
-
-        modal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-
+        openModal();
     });
-
 });
 
+// Close button
 document.querySelector(".close-modal").addEventListener("click", closeModal);
 
+// Close when clicking outside
 modal.addEventListener("click", e => {
-
     if (e.target === modal) {
-
         closeModal();
-
     }
-
 });
 
-function closeModal(){
-
-    modal.classList.remove("active");
-
-    document.body.style.overflow = "";
-
+function openModal() {
+    if (!modal.classList.contains("active")) {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
 }
+
+function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+// Auto open after 15 seconds
+setTimeout(() => {
+    openModal();
+
+    // Then open every 45 seconds
+    setInterval(() => {
+        openModal();
+    }, 45000);
+
+}, 15000);
