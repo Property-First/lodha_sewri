@@ -855,7 +855,7 @@
 
      <div class="form-group">
     <input
-        id="phone"
+        id="phone-main"
         type="tel"
         name="phone"
         placeholder="Enter Mobile Number"
@@ -1062,7 +1062,7 @@
 
      <div class="form-group">
     <input
-        id="phone"
+        id="phone-modal"
         type="tel"
         name="phone"
         placeholder="Enter Mobile Number"
@@ -1125,9 +1125,18 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
 <script>
-    const input = document.querySelector("#phone");
+    // const input = document.querySelector("#phone");
 
-window.intlTelInput(input, {
+window.intlTelInput(document.querySelector("#phone-main"), {
+    initialCountry: "in",
+    preferredCountries: ["in", "ae", "us", "gb", "sg"],
+    separateDialCode: true,
+    nationalMode: true,
+    autoPlaceholder: "polite",
+    strictMode: true,
+});
+
+window.intlTelInput(document.querySelector("#phone-modal"), {
     initialCountry: "in",
     preferredCountries: ["in", "ae", "us", "gb", "sg"],
     separateDialCode: true,
@@ -1145,9 +1154,9 @@ window.intlTelInput(input, {
 .iti input {
     width: 100%;
     /* height: 58px; */
-    border-radius: 12px;
+    
     padding-left: 90px !important;
-    font-size: 15px;
+    font-size: 13px;
     /* border: 1px solid #ddd; */
 }
 
