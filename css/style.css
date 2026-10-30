@@ -1112,7 +1112,7 @@ ul{
 
 }
 
-.gallery-item::after{
+/* .gallery-item::after{
 
     content:"+";
 
@@ -1142,7 +1142,7 @@ ul{
 
     transition:.4s;
 
-}
+} */
 
 .gallery-item:hover img{
 
@@ -1150,13 +1150,13 @@ ul{
 
 }
 
-.gallery-item:hover::before,
+/* .gallery-item:hover::before,
 
 .gallery-item:hover::after{
 
     opacity:1;
 
-}
+} */
 
 
 /*==============================
